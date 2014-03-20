@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eastside JS</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</head>
+
+  
+
+<body>
+
+<script>  
+  var peeps = ["Ryan","Michael","Eliott","Jerome","John","Ali","Jack", "Jordan"]
+  var colors = ["green","blue","red","brown","black","magenta","light-green", "salmon"]
+
+  $(peeps).each(function (i, v) {
+    a = "<p style='color:"+colors[i]+"'>"+v+"</p>"
+    $("body").append(a);
+  });
+</script>
+</body>
+
+
+
+</html>
