@@ -2,14 +2,41 @@
 <html>
 <head>
   <title>Eastside JS</title>
+
+
 </head>
 <body>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<p>Who is this? <br /><p>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 <script type="text/javascript">
-  var peeps = ["Ryan", "Eliott", "Jerome", "John", "Jack", "Jordan", "Ali"]
+  var peeps = ["Ryan", "Eliott", "Jerome", "John", "Jack", "Jordan", "Ali"];
+  var images = ["http://snapesto.com/eastside/ryan.jpg", "http://snapesto.com/eastside/elliot.jpg", "http://snapesto.com/eastside/jerome.jpg", "http://snapesto.com/eastside/john.jpg", "http://snapesto.com/eastside/jack.jpg", "http://snapesto.com/eastside/jordan.jpg", "http://snapesto.com/eastside/ali.jpg"];
+document.write("")
+
+var id = Math.floor((Math.random()*7));
+var match = peeps[id].toLowerCase();
+document.write("<img src=\"" + images[id] + "\"" + "<br>");
+
+function validateForm()
+{
+var x=document.myForm.fname.value;
+if (x==match)
+  {
+  alert("Correct");
+  return false;
+  }
+else{
+  alert("Not correct");
+  return false;
+}
+}
 </script>
+
+<form name="myForm" action="index.html" onsubmit="return (validateForm());" method="post">
+First name: <input type="text" name="fname">
+<input type="submit" value="Submit">
+</form>
 
 </body>
 </html>
