@@ -9,6 +9,17 @@
 
 <script type="text/javascript">
   var peeps = ["Ryan", "Eliott", "Jerome", "John", "Jack", "Jordan", "Ali"]
+
+function getName(){
+    answer = prompt("Who is the alpha male among the coding geeks here?");
+    if (answer === "Eliott"){
+        alert("How smart! You got the right answer!");
+    } else {
+       getName()
+    }
+};
+
+getName();
 </script>
 
 </body>
