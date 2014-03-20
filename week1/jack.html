@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eastside JS</title>
+</head>
+<body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<h3 id="results"></h3>
+
+** US Life expectancy is 78.64 years
+
+<script type="text/javascript">
+  var peeps = ["Ryan", "Eliott", "John", "Jack", "Jordan", "Ali"]
+  var ages = []
+  var totalyears = 0
+  var text = ""
+
+  for (var i = 0; i < peeps.length; i++) {
+    var age = prompt("How old is " + peeps[i] + "?")
+    ages[i] = age
+    text = text + peeps[i] + " is " + age + ". Based on US life expectancy he has " + (78.64 - age) + " years left.<br/>"
+  }
+
+  for (var i = 0; i < ages.length; i++) {
+    totalyears = totalyears + Number(ages[i])
+  }
+
+  text = text + "<br/>Together we've lived " + (totalyears) + " years.<br/>"
+  text = text + "Our average age is " + (totalyears/peeps.length) + " years.<br/>"
+//  text = text = "Average age is: " + ()
+
+  $("#results").html(text)
+</script>
+
+
+</body>
+</html>
