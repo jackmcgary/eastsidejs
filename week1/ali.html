@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eastside JS</title>
+</head>
+
+<style>
+.highlight {
+	color:cyan;
+}
+.dim {
+	color:gray;
+}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<body>
+<div id='list'>
+<ul id='names'>
+</ul>
+</div>
+
+<script type="text/javascript">
+var peeps = ["ryan", "eliott", "jerome", "john", "jack", "jordan", "ali"];
+
+var list = document.getElementById('names');
+peeps.forEach(function(val, idx, arr){
+	var e = document.createElement("li");
+	e.innerHTML = val;
+	e.id = "name-"+idx;
+	list.appendChild(e);
+});
+
+var curr_type = "";
+
+function typing(e) {
+	var c = e.keyCode;
+	if(c >= 65 && c <= 90) { //is a letter
+		c = String.fromCharCode(c + 32);
+		curr_type += c;
+		highlight();
+	}
+	if(c == 13) {
+		curr_type = "";
+		$('li').removeClass('dim highlight');
+	}
+}
+
+//search the list for the characters, and highlight matching
+function highlight() {
+	peeps.forEach(function(val, idx, arr){
+		if(val.indexOf(curr_type) >= 0) {
+		console.log('match - '+val+" word "+curr_type);
+			$('#name-'+idx).addClass('highlight');
+			$('#name-'+idx).removeClass('dim');
+		} else {
+		console.log('no match - '+val+" word "+curr_type);
+			$('#name-'+idx).addClass('dim');
+			$('#name-'+idx).removeClass('highlight');
+		}
+	});
+}
+
+document.onkeydown = typing;
+
+</script>
+
+</body>
+</html>
