@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+      <title>Eastside JS</title>
+    </head>
+
+    <body>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+        <script type="text/javascript">
+
+            $( "div.show_amazing_peeps" ).html(function() {
+
+                var peeps = ["Ryan", "Eliott", "Jerome", "John", "Jack", "Jordan", "Ali"]
+
+                function amazing() {
+                    foreach (peep in peeps) {
+                        return peep + "is amazing! %0A";
+                    }
+                }
+
+            });
+
+            $(function() {
+               $('#who_is_amazing').click(function() {
+                   $('#show_amazing_peeps').show();
+                   return false;
+               });        
+            });
+          
+        </script>
+
+        <form>
+            <div>
+                Who is amazing?  Click <div id="who_is_amazing">here</div>.
+            </div>
+
+            <br />
+
+            <div id="show_amazing_peeps"></div>
+
+        </form>
+
+    </body>
+
+</html>
